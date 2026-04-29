@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = UTF-8>
+        <meta name = "viewport" content = "width=device-width, initial-scale=2.0">
+        <title> PDF DOWNLOADER </title>
+        <LINK REL = "stylesheet" href = "PDF.CSS"> 
+
+    </head>
+    <body>
+        <div class = "container">
+            <h2> PDF DOWNLOADER </h2>
+            <P> Enter the URL and click download </P>
+            <input type = "text" id = "url" placeholder = Enter URL Here>
+            <button onclick = "downloadPDF()"> Download PDF </button>
+
+        </div>
+        <script>
+            function downloadPDF()
+            {
+                var url = document.getElementById("url").value;
+                if (url)
+            {
+                var link = document.createElement("a");
+                link.href = url;
+                link.download = "downloaded.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+               else {
+                alert("check ur url");
+               }
+            }    </script>
+    </body>
+</html>
+
+
+
